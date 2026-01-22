@@ -1,0 +1,601 @@
+:root {
+    --dark-bg: #0c1020;
+    --nav-bg: #0a0e18;
+    --section-blue: #4c5f8a;
+    --accent-purple: #d3a4ff;
+    --accent-light: #e6c7ff;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Beiruti', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--white);
+    margin: 0;
+    padding: 0;
+}
+
+.discover-btn {
+    text-decoration: none;
+    max-width: max-content;
+}
+
+.nav-item{
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: medium;
+}
+
+h1 {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: large;
+    color:#ede0e0 !important;
+}
+
+h2, h3, h4, h5, h6, b {
+    font-family: 'Red Hat Display', sans-serif;
+    color:#D3B1FF;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.custom-nav {
+    background-color: var(--nav-bg);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.language-switch {
+    display: flex;
+    align-items: center; /* centra verticalmente nella navbar */
+    margin-left: 1rem;   /* spazio tra logo e toggle */
+    position: relative;   /* mantiene il toggle-circle relativo al label */
+}
+
+.language-toggle {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    pointer-events: none;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 80px;
+    height: 36px;
+    background-color: #D3B1FF;
+    border-radius: 50px; /* più arrotondato della pilla */
+    cursor: pointer;
+    padding: 2px; /* leggermente più interno per far stare il cerchio */
+    box-sizing: border-box; /* evita overflow del padding */
+}
+
+.toggle-circle {
+    position: absolute; /* deve essere absolute per muoversi dentro la pill */
+    top: 2px; /* margine interno dalla pilla */
+    left: 2px; /* posizione iniziale all'interno della pill */
+    width: 32px;
+    height: 32px;
+    background-color: #5A1DA8;
+    border: 1px solid #042F7A;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.language-toggle:checked + .toggle-label .toggle-circle {
+    left: 46px; /* posizione finale, sempre dentro la pilla */
+    background-color: #042F7A;
+    border-color: #042F7A;
+    color: #fff;
+}
+
+.toggle-text.on {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-weight: bold;
+}
+
+.toggle-text.off {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #042F7A;
+    font-weight: bold;
+}
+
+.language-toggle:checked + .toggle-label .toggle-text.on {
+    color: #042F7A;
+}
+
+.language-toggle:checked + .toggle-label .toggle-text.off {
+    color: #fff;
+}
+
+.brand-logo img {
+    width: 45px;
+}
+
+.lang-btn {
+    background-color: #1f2238;
+    border: none;
+    padding: 6px 14px;
+    margin-left: 6px;
+    border-radius: 20px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.lang-btn.active {
+    background-color: var(--accent-purple);
+    color: var(--dark-bg);
+}
+
+.nav-link {
+    color: #d8d8d8 !important;
+    margin-left: 20px;
+}
+
+.nav-link.active {
+    color: #6456FF !important;
+}
+
+.nav-link {
+    color: #D3B1FF !important;
+}
+/* -----------------------
+   HERO
+-------------------------- */
+.hero {
+    height: 60vh;
+    background: linear-gradient(#0c1020, #475ee9, #a670e0, #ffffff);
+    color: var(--white);
+}
+
+.heroUP {
+    background: linear-gradient(#0c1020, #475ee9, #a670e0, #ffffff);
+    color: var(--white);
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 200;
+    color:#d3a4ff;
+}
+
+.hero h2 {
+    font-size: 1.6rem;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* -----------------------
+   ABOUT
+-------------------------- */
+.aboutme {
+    background-color: #42619C;
+    padding: 60px 25px;
+}
+
+.about {
+    background-color: #42619C;
+    padding: 60px 25px;
+}
+
+.proj {
+    padding: 60px 25px;
+}
+
+/* Sezione skills */
+.skills {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 5rem 0;
+}
+
+/* Contenuto centrato e più stretto */
+.skills .content-center {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Barre delle skill */
+.skills .skill-bars .bar {
+    background-color: #333;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.skills .skill-bars .bar span {
+    display: block;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #6600ec; 
+}
+
+/* Carousel frecce */
+.skills .carousel-control-prev-icon,
+.skills .carousel-control-next-icon {
+    background-color: #D3B1FF;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+/* Sezione progetti */
+.projects {
+    background-color: #42619C;
+    color: #ffffff;
+}
+
+/* Immagine progetto */
+.project-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Pulsante scopri */
+.discover-btn {
+    background-color: #D3B1FF;
+    color: #1a1a1a;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.discover-btn:hover {
+    background-color: #b191ff;
+}
+
+/* Carousel frecce lilla */
+.projects .carousel-control-prev-icon,
+.projects .carousel-control-next-icon {
+    background-color: #D3B1FF;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 3%;
+}
+
+.profile-img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+/* -----------------------
+   SKILLS
+-------------------------- */
+.skills {
+    background-color: #0c1020;
+}
+
+.skill-bars p {
+    margin-top: 15px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.bar {
+    width: 100%;
+    height: 10px;
+    background-color:#42619C;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    background-color: var(--accent-purple);
+    border-radius: 10px;
+}
+
+/* -----------------------
+   PROJECT
+-------------------------- */
+.project {
+    background-color: #506EA6;
+    padding: 70px 25px;
+}
+
+.project-img {
+    width: 260px;
+    border-radius: 20px;
+}
+
+.discover-btn {
+    background-color: var(--accent-purple);
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 15px;
+    color: var(--dark-bg);
+    font-weight: 600;
+    align-self: flex-start;
+    width: auto;
+}
+/* -----------------------
+   CONTACTS
+-------------------------- */
+.contacts {
+    background: radial-gradient(circle at bottom, #475ee9, #a670e0, #0c1020);
+}
+
+.contact-icon {
+    width: 55px;
+    height: 55px;
+    background-color: #D3B1FF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    color: #0c1020;
+    text-decoration: none;
+}
+
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.project-details.open {
+    max-height: 2000px; /* deve essere più grande di quanto serve */
+    opacity: 1;
+}
+
+/* CONTENITORE FIGMA – mantiene il tuo layout */
+.figmacontainer {
+  display: flex;
+  justify-content: center;
+}
+
+/* SCALING VISIVO (zoom tipo marco.fyi) */
+.figma-scale {
+  transform: scale(1.15);
+  transform-origin: top center;
+}
+
+/* iframe resta come prima */
+.figmacontainer iframe {
+  width: 100%;
+  height: 560px;
+  max-width: 280px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
+
+.figma-mobile-link {
+    display: none; /* Tenere, nasconde il pulsante su desktop/tablet */
+}
+
+.project-container, .proj:last-of-type {
+    padding-bottom: 0 !important;
+  }
+
+
+/* quando l'ID è nell'URL */
+.project-details:target {
+    display: block;
+}
+
+.project-img-responsive {
+    width: 100%;       /* occupa tutta la colonna */
+    height: auto;      /* mantiene proporzioni */
+    display: block;    /* elimina spazi sotto */
+    border-radius: 10px; /* opzionale */
+    object-fit: contain;
+}
+
+/* -----------------------
+   RESPONSIVE
+-------------------------- */
+@media (max-width: 775px) {
+    .hero h1 { font-size: 2.5rem; }
+    .profile-img, .project-img { width: 220px; height: 220px; }
+    .bio-long {
+        display: none;
+    }
+
+    .about-text.expanded .bio-long {
+        display: block;
+        margin-top: 1rem;
+    }
+
+    .toggle-about i {
+        transition: transform 0.3s ease;
+        display: inline-block; /* necessario per la rotazione */
+    }
+
+    /* Ruota la freccia verso l'alto quando espansa */
+    .toggle-about.expanded i {
+        transform: rotate(180deg); /* freccia verso l'alto */
+    }
+
+    .toggle-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    .toggle-about {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    .project-container .discover-btn {
+        display: block;
+        margin: 1rem auto 0 auto; /* Centra il pulsante sotto la bio */
+    }
+    
+    .project-details {
+        text-align: left; /* mantiene leggibilità per il testo esteso */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* CONTENITORE ESTERNO (rettangolo verticale) */
+.figma-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* VIEWPORT VERTICALE */
+  .figma-viewport {
+    position: relative;
+    width: 100%;
+    max-width: 280px;             
+    aspect-ratio: 9 / 16;          /* MOBILE PORTRAIT */
+    background: #111;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+  }
+  
+  /* IFRAME */
+  .figma-viewport iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+    
+      /* immagine sopra */
+      .projects .col-md-4 {
+        margin-bottom: 1rem;
+      }
+    
+      /* testo resta left-aligned */
+      .projects .col-md-6 {
+        text-align: left;
+      }
+    
+      /* SOLO il bottone centrato */
+      .projects .discover-btn {
+        display: block;
+        margin: 1.5rem auto 0 auto;
+      }
+
+  /* immagine sempre sopra */
+  .project-container .col-md-4 {
+    order: 1;
+    margin-bottom: 1rem;
+  }
+
+  /* testo sotto, LEFT aligned */
+  .project-container .col-md-6 {
+    order: 2;
+    text-align: left;
+  }
+
+  /* bottone centrato */
+  .project-container .discover-btn {
+    display: block;
+    margin: 1.5rem auto 0;
+  }
+  .figma-mobile-link {
+    display: none;
+  }
+  .figma-mobile-link {
+    display: block;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .figma-mobile-img {
+    width: 100%;
+    max-width: 100px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+    .hero { height: 50vh; }
+    .hero h1 { font-size: 2.1rem; }
+
+}
+
+.page-404 {
+    min-height: calc(100vh - 80px); /* togli l'altezza della navbar */
+    padding: 4rem 2rem;
+    max-width: 100%;
+}
+
+.titleproject {
+    padding-top: 1rem;
+}
+
+@media (max-width: 776px) {
+    .hero h1 { font-size: 1.8rem; }
+    .hero h2 { font-size: 1.1rem; }
+    .profile-img, .project-img { width: 180px; height: 180px; }
+    .figmacontainer iframe {
+        display: none;
+    }
+   
+    /* STACK MOBILE ONLY */
+  .project-container .row.align-items-center {
+    flex-direction: column;
+  }
+
+  .project-container .col-md-4,
+  .project-container .col-md-5,
+  .project-container .col-md-6,
+  .project-container .col-md-7 {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  /* immagine sopra */
+  .project-container .col-md-4 {
+    order: 1;
+    margin-bottom: 1rem;
+  }
+
+  /* testo sotto */
+  .project-container .col-md-6,
+  .project-container .col-md-7 {
+    order: 2;
+    text-align: left;
+  }
+
+  /* bottone centrato */
+  .project-container .discover-btn {
+    display: block;
+    margin: 1.5rem auto 0;
+  }
+  .project-img-responsive {
+    width: 100%;    /* sempre piena larghezza colonna */
+    height: auto;
+}}

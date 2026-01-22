@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letizia Quaroni – UX/UI Designer & Frontend Developer</title>
+
+    <!-- GOOGLE FONTS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&family=Beiruti:wght@300;400;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- FAVICON -->
+    <link rel="icon" href="logo.png" type="image/png" />
+
+    <!-- BOOTSTRAP ICONS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- CSS ESTERNO -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="brand-logo">
+                <a href="Portfolio-Quaroni-Home.html">
+                    <img src="logo.png" alt="Home">
+                </a>
+            </div>
+            <div class="language-switch">
+                <input type="checkbox" id="languageToggle" class="language-toggle">
+                <label for="languageToggle" class="toggle-label">
+                    <span class="toggle-circle"></span>
+                    <span class="toggle-text on">IT</span>
+                    <span class="toggle-text off">EN</span>
+                </label>
+            </div>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="Portfolio-Quaroni-Home.html" data-it="Homepage"
+                            data-en="Home">Homepage</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#" data-it="Progetti"
+                            data-en="Projects">Progetti</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="proj heroUP d-flex flex-column">
+        <div class="container-xl align-items-center py-5">
+            <h2 data-it="Progetti" data-en="Projects">Progetti</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-8 about-text">
+                    <p class="bio-short"
+                        data-it="I seguenti progetti sono stati integralmente svolti durante il corso di Laurea Magistrale di Teoria e Tecnologia della Comunicazione dell’Università degli Studi di Milano Bicocca.  
+                La maggior parte dei progetti sono stati svolti in team, esperienza che ha contribuito a consolidare la mia capacità di lavorare in gruppo, mentre il progetto della mia tesi di laurea è stato sviluppato integralmente in maniera autonoma."
+                        data-en="The following projects were completed as part of my Master’s degree in Communication Theory and Technology at the University of Milano Bicocca. Most of the selected projects were carried out in teams, strengthening my collaborative skills, while my thesis project was entirely developed independently, from start to finish.">
+                        I seguenti progetti sono stati integralmente svolti durante il corso di Laurea Magistrale di
+                        Teoria e Tecnologia della Comunicazione dell’Università degli Studi di Milano Bicocca.
+                        La maggior parte dei progetti sono stati svolti in team, esperienza che ha contribuito a
+                        consolidare la mia capacità di lavorare in gruppo, mentre il progetto della mia tesi di laurea è
+                        stato sviluppato integralmente in maniera autonoma.</p>
+
+                    <p class="bio-long"
+                        data-it="Il principale tool utilizzato è Figma, ma vi sono anche esempi di progetti in cui ho gestito lo sviluppo del codice, attraverso HTML, CSS e l’utilizzo della libreria Bootstrap per integrare questi."
+                        data-en="The main tool used in the projects is Figma, even though some specific projects also involved coding, using HTML, CSS, and integrating Bootstrap components.">
+                        Il principale tool utilizzato è Figma, ma vi sono anche esempi di progetti in cui ho gestito lo
+                        sviluppo del codice, attraverso HTML, CSS e l’utilizzo della libreria Bootstrap per integrare
+                        questi.</p>
+                </div>
+                <!-- FRECCIA CENTRATA -->
+                <div class="toggle-container d-lg-none text-center mt-2">
+                    <button class="toggle-about btn btn-link p-0 text-white">
+                        <i class="bi bi-chevron-down fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle-about');
+        const aboutText = document.querySelector('.about-text');
+
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                aboutText.classList.toggle('expanded');
+                toggleBtn.classList.toggle('expanded');
+            });
+        }
+    </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const buttons = document.querySelectorAll(".discover-btn");
+
+     // ICONA DI DEFAULT (manina) all'avvio
+    buttons.forEach(btn => {
+        btn.innerHTML = '<i class="bi bi-hand-index"></i>';
+    });
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", function () {
+
+            const container = this.closest(".project-container");
+            const details = container.querySelector(".project-details");
+
+            const allDetails = document.querySelectorAll(".project-details");
+            const allButtons = document.querySelectorAll(".discover-btn");
+
+            // CHIUDI TUTTE LE ALTRE SEZIONI
+            allDetails.forEach(d => {
+                if (d !== details) d.classList.remove("open");
+            });
+
+            // RIPRISTINA LE ICONE DEGLI ALTRI PULSANTI
+            allButtons.forEach(b => {
+                if (b !== this) {
+                    b.innerHTML = '<i class="bi bi-hand-index"></i>';
+                }
+            });
+
+            // La sezione si aprirà?
+            const willOpen = !details.classList.contains("open");
+
+            // Toggle apertura
+            details.classList.toggle("open");
+
+            // Aggiorna icona del pulsante
+            this.innerHTML = willOpen
+                ? '<i class="bi bi-x-lg"></i>'
+                : '<i class="bi bi-hand-index"></i>';
+        });
+    });
+
+});
+</script>
+
+    <!--PROGETTO 1-->
+    <div id="carrie" class="proj py-5 project-container">
+        <div class="container-xl">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-5 d-flex justify-content-center">
+                    <img src="progetto1.png" class="project-img" />
+                </div>
+
+                <div class="col-md-7 project-text-col">
+                    <div class="project-text-box">
+                        <h3 class="titleproject">Carrie – Caregiver Assistant </h3>
+                        <p data-it="Progetto di tesi di un'interfaccia chatbot con elementi di realtà virtuale a supporto del caregiving informale. Il progetto è stato svolto attraverso un'analisi di ricerca letteraria su caregiving, italiano ed estero, e sulle tecnologie chatbot e VR. Concentrato poi nell'interfaccia realizzata su Figma attraverso il ciclo di Interaction Design, distribuito in tre cicli iterativi."
+                            data-en="Thesis project on a chatbot interface with virtual reality elements to support informal caregiving. The project involved a literature review on caregiving, both in Italy and internationally, and on chatbot and VR technologies. It was then focused on the interface designed in Figma following the Interaction Design process, completed in three iterative cycles.">
+                            Progetto di tesi di un'interfaccia chatbot con elementi di realtà virtuale a supporto del
+                            caregiving informale. Il progetto è stato svolto attraverso un'analisi di ricerca letteraria
+                            su caregiving, italiano ed estero, e sulle tecnologie chatbot e VR. Concentrato poi
+                            nell'interfaccia realizzata su Figma attraverso il ciclo di Interaction Design, distribuito
+                            in tre cicli iterativi.</p>
+                        <button class="discover-btn btn-primary"></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEZIONE DA ESPANDERE -->
+            <div class="project-details mt-4">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row align-items-center">
+                            <div class="row">
+                                <div class="col">
+                                    <h5>Target</h5>
+                                    <p data-it="Caregiver informali over 50" data-en="Informal Caregivers aged 50+">
+                                        Caregiver informali over 50</p>
+                                </div>
+                                <div class="col">
+                                    <h5>Task Completion Rate</h5>
+                                    <p>71.9%</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <h5 data-it="Descrizione" data-en="Description">Descrizione</h5>
+                        <p data-it="Il prodotto si declina in 5 pagine, home, chatbot, comfort, corsi e profilo:"
+                            data-en="The product is structured across 5 pages: Home, Chatbot, Comfort, Courses, and Profile:">
+                            Il prodotto si declina in 5 pagine, home, chatbot, comfort, corsi e profilo:</p>
+                        <p data-it="Homepage: Mostra in primo piano le notifiche principali, come appuntamenti, visite e somministrazione dei farmaci. Offre shortcut per riprendere facilmente corsi e sessioni di mindfulness. Include un pulsante per le emergenze, con accesso ai numeri utili e a istruzioni guidate dal chatbot per le manovre di soccorso."
+                            data-en="Displays key notifications upfront, such as appointments, visits, and medication intake. Provides shortcuts to easily resume courses and mindfulness sessions. It includes an emergency button with access to useful contacts and chatbot-guided instructions for first aid procedures.">
+                            mostra in primo piano le notifiche principali, come appuntamenti, visite e somministrazione
+                            dei farmaci. Offre shortcut per riprendere facilmente corsi e sessioni di mindfulness.
+                            Include un pulsante per le emergenze, con accesso ai numeri utili e a istruzioni guidate dal
+                            chatbot per le manovre di soccorso.</p>
+                        <p data-it="Chatbot: Permette il dialogo con l’utente per emergenze, corsi, gruppi della community e orientamento all’interno dell’app, utilizzando testo, foto e audio."
+                            data-en="Chatbot: Enables user interaction for emergencies, courses, community groups, and in-app guidance, using text, images, and audio.">
+                            Chatbot: Permette il dialogo con l’utente per emergenze, corsi, gruppi della community e
+                            orientamento all’interno dell’app, utilizzando testo, foto e audio.
+                        </p>Chatbot: Permette il dialogo con l’utente per emergenze, corsi, gruppi della community e
+                        orientamento all’interno dell’app, utilizzando testo, foto e audio.</p>
+                        <p data-it="Comfort: raccoglie peer-support e mindfulness. Offre gruppi aperti o chiusi con mediazione del chatbot, sessioni VR o audio e video, corsi personalizzabili e “spazi sicuri” per il benessere, con suggerimenti basati sulle attività attive."
+                            data-en="Comfort: brings together peer support and mindfulness. Offers open or closed groups moderated by the chatbot, VR or audio/video sessions, customizable courses, and safe spaces for well-being, with suggestions based on ongoing activities.">
+                            Comfort: raccoglie peer-support e mindfulness. Offre gruppi aperti o chiusi con mediazione
+                            del chatbot, sessioni VR o audio o video, corsi personalizzabili e “spazi sicuri” per il
+                            benessere, con suggerimenti basati sulle attività attive.</p>
+                        <p data-it="Corsi: consente di esplorare un catalogo di corsi filtrabili per modalità e argomento. Propone suggerimenti basati sui corsi già seguiti e gli interessi dell’utente."
+                            data-en="Courses: allows users to explore a course catalog that can be filtered by format and topic. It provides recommendations based on previously completed courses and user interests.">
+                            <b>Corsi:</b> consente di esplorare un catalogo di corsi filtrabili per modalità e
+                            argomento. Propone suggerimenti basati sui corsi già seguiti e gli interessi dell’utente.
+                        </p>
+                        <p data-it="Profilo: contiene il fascicolo del caregiver con informazioni sull’assistito, famigliari e operatori coinvolti, agevolazioni e riconoscimenti statali. Include forum, calendario per farmaci e visite, e impostazioni per notifiche, promemoria e gestione generale dell’app."
+                            data-en="Profile: contains the caregiver’s file with information about the assisted person, family members, and involved professionals, as well as state benefits and official recognitions. It includes forums, a calendar for medications and appointments, and settings for notifications, reminders, and overall app management.">
+                            <b>Profilo:</b> contiene il fascicolo del caregiver con informazioni sull’assistito,
+                            famigliari e operatori coinvolti, agevolazioni e riconoscimenti statali. Include forum,
+                            calendario per farmaci e visite, e impostazioni per notifiche, promemoria e gestione
+                            generale dell’app.
+                        </p>
+                        <h6 data-it="Il mio contributo" data-en="My Contribution">Il mio contributo</h6>
+                        <p data-it="Il prototipo, la ricerca, le grafiche e la simulazione virtuale sono state interamente gestite da me, sulla base di una ricerca in letteratura che ho seguito personalmente."
+                            data-en="The prototype, research, graphics, and virtual simulation were entirely handled by me, based on literature research that I personally conducted.">
+                            Il prototipo, la ricerca, le grafiche e la simulazione virtuale sono state interamente
+                            gestite da me, sulla base di una ricerca in letteratura che ho seguito personalmente.
+                        </p>
+                        <p><a style="color: blueviolet;"
+                                href="https://www.figma.com/design/udBc1Lc9q802tFvyqgRJSW/Progettazione---Tesi-Quaroni?node-id=753-4717&t=NpyY2qBR2yaFdDQW-1"
+                                data-it="Link alla progettazione completa" data-en="Link to full project design">Link
+                                alla progettazione completa</a></p>
+                    </div>
+
+                    <div class="col-md-4 figmacontainer">
+                        <div class="figma-scale">
+                            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
+                                src="https://embed.figma.com/proto/udBc1Lc9q802tFvyqgRJSW/Progettazione---Tesi-Quaroni?page-id=2639%3A60724&node-id=2630-42607&p=f&viewport=-175%2C-875%2C0.03&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2630%3A42607&embed-host=share"
+                                allowfullscreen></iframe>
+                        </div>
+
+                        <!-- MOBILE -->
+                        <a href="https://embed.figma.com/proto/udBc1Lc9q802tFvyqgRJSW/Progettazione---Tesi-Quaroni?page-id=753%3A4717&node-id=930-18004&p=f&viewport=-529%2C961%2C0.19&scaling=scale-down&content-scaling=fixed&starting-point-node-id=930%3A18004&embed-host=share"
+                            target="_blank" class="figma-mobile-link">
+                            <img src="figmaproto.png" class="figma-mobile-img">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--PROGETTO 2-->
+    <div id="antitruffapp" class="about py-5 project-container">
+        <div class="container-xl">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7 project-text-col">
+                    <div class="project-text-box">
+                        <h3 class="titleproject">AntiTruffApp</h3>
+                        <p data-it="Progettazione di un’interfaccia volta all’istruzione della popolazione anziana riguardo le truffe e le frodi online, per garantire una maggiore autonomia dei soggetti fragili che si affacciano al mondo tecnologico. Il progetto basa le sue fondamenta nella ricerca in letteratura, per individuare criticità del tema e possibili soluzioni, che sono state declinate nella progettazione  del ciclo di Interaction Design."
+                            data-en="Design of a user interface aimed at educating the elderly on online scams and frauds, to enhance autonomy for vulnerable users engaging with technology nowadays. The project was grounded in literature research to identify challenges, threats and potential solutions, which were then conceptualized and later applied through Interaction Design process.">
+                            Progettazione di un’interfaccia volta all’istruzione della popolazione anziana riguardo le
+                            truffe e le frodi online, per garantire una maggiore autonomia dei soggetti fragili che si
+                            affacciano al mondo tecnologico. Il progetto basa le sue fondamenta nella ricerca in
+                            letteratura, per individuare criticità del tema e possibili soluzioni, che sono state
+                            declinate nella progettazione del ciclo di Interaction Design.</p>
+                        <button class="discover-btn btn-primary"></button>
+                    </div>
+                </div>
+                <div class="col-md-5 d-flex justify-content-center">
+                    <img src="progetto2.png" class="project-img" />
+                </div>
+            </div>
+            <!-- SEZIONE DA ESPANDERE -->
+            <div class="project-details mt-4" style="background-color: #42619C">
+
+                <div class="row">
+
+                    <!-- COLONNA SINISTRA: PROTOTIPO -->
+                    <div class="col-md-4 figmacontainer mb-4">
+                        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
+                            src="https://embed.figma.com/proto/ooOIUPXlCIQ1PIpzQTq4Td/Interaction-Design?page-id=0%3A1&node-id=1333-6661&viewport=-1467%2C-1061%2C0.06&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1234%3A3506&embed-host=share"
+                            allowfullscreen></iframe>
+                        <!-- LINK FIGMA MOBILE -->
+                        <a href="https://embed.figma.com/proto/ooOIUPXlCIQ1PIpzQTq4Td/Interaction-Design?page-id=0%3A1&node-id=1333-6661&p=f&viewport=-16653%2C-12739%2C0.63&scaling=contain&content-scaling=fixed&starting-point-node-id=1333%3A6661&show-proto-sidebar=1&embed-host=share"
+                            target="_blank" class="figma-mobile-link">
+                            <img src="figmaproto.png" alt="Apri prototipo Figma" class="figma-mobile-img"></a>
+                    </div>
+
+                    <!-- COLONNA DESTRA: DESCRIZIONE -->
+                    <div class="col-md-8" style="color:white;">
+
+                        <div class="row">
+                            <div class="col">
+                                <h5>Target</h5>
+                                <p>Over 60</p>
+                            </div>
+                            <div class="col">
+                                <h5>Task Completion Rate</h5>
+                                <p>60.71%</p>
+                            </div>
+                        </div>
+
+                        <h5 data-it="Descrizione" data-en="Description">Descrizione</h5>
+                        <p data-it="L'interfaccia è stata studiata per essere usabile da soggetti anziani, esposti a truffe online. Dopo le interviste utente, sono state progettate 5 pagine:"
+                            data-en="The interface was designed to be usable by older adults exposed to online scams. After user interviews, 5 pages were designed:">
+                            L'interfaccia è stata studiata per essere usabile da soggetti anziani, esposti a truffe
+                            online. Dopo interviste utente, sono state progettate 5 pagine:
+                        </p>
+
+
+                        <p data-it="Homepage: pulsanti grandi per truffe, notizie, numeri utili, numeri sospetti, FAQ e notifiche."
+                            data-en="Homepage: large buttons for scams, news, useful numbers, suspicious numbers, FAQs, and notifications.">
+                            <b>Homepage</b>: pulsanti grandi per truffe, notizie, numeri utili, numeri sospetti, FAQ e
+                            notifiche.
+                        </p>
+
+                        <p data-it="Esercizi: corsi modulari, quiz, video, numeri utili e consigli di comportamento."
+                            data-en="Exercises: modular courses, quizzes, videos, useful numbers, and behavioral tips.">
+                            <b>Esercizi</b>: corsi modulari, quiz, video, numeri utili e consigli di comportamento.
+                        </p>
+
+                        <p data-it="Chatbot: simulazioni di truffe, segnalazioni, ricerca numeri e conversazioni informative."
+                            data-en="Chatbot: scam simulations, reports, number lookup, and informative conversations.">
+                            <b>Chatbot</b>: simulazioni di truffe, segnalazioni, ricerca numeri e conversazioni
+                            informative.
+                        </p>
+
+                        <p data-it="Profilo: progresso gamificato e corsi attivi."
+                            data-en="Profile: gamified progress and active courses.">
+                            <b>Profilo</b>: progresso gamificato e corsi attivi.
+                        </p>
+
+                        <p data-it="Opzioni: impostazioni di sistema e sicurezza."
+                            data-en="Options: system and security settings.">
+                            <b>Opzioni</b>: impostazioni di sistema e sicurezza.
+                        </p>
+
+
+                        <h6 data-it="Il mio contributo" data-en="My Contribution">Il mio contributo</h6>
+                        <p data-it="Ho contribuito a seguire tutte le fasi di IxD, dalle interviste al testing fino alla documentazione finale."
+                            data-en="I helped handling all phases of Interaction Design, from user interviews and testing to the final documentation.">
+                            Ho contribuito a seguire tutte le fasi di IxD, dalle interviste al testing fino alla
+                            documentazione finale.
+                        </p>
+                        <h6 data-it="Link" data-en="Links">Link</h6>
+                        <p><a style="color: blueviolet;"
+                                href="https://www.figma.com/design/ooOIUPXlCIQ1PIpzQTq4Td/Interaction-Design?node-id=0-1&t=XCJuQshKp8qdGt2d-1"
+                                data-it="Link alla progettazione" data-en="Link to full project design">Link alla
+                                progettazione</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--PROGETTO 3-->
+    <div id="prepaporter" class="proj py-5 project-container">
+        <div class="container-xl">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-5 d-flex justify-content-center">
+                    <img src="progetto3.png" class="project-img" />
+                </div>
+                <div class="col-md-7">
+                    <h3 class="titleproject">Prep-à-Porter</h3>
+                    <p data-it="Progetto di Ergonomia Cognitiva volto alla realizzazione di un prodotto che risolva un bisogno dell'utenza universitaria. Si presenta la realizzazione del prototipo di un’interfaccia che agevoli l'organizzazione efficace dei pasti e della spesa per studenti universitari e lavoratori a partire dai 25 anni che gestiscono i propri pasti da asporto, condizione che spesso si declina in una cattiva gestione alimentare, sprechi e frustrazione."
+                        data-en="Cognitive Ergonomics project focused on creating a user interface solution addressing university students' specific needs. The prototype interface facilitates efficient meal and grocery management for students and workers aged 25+, helping them handle takeout meals and cooking while reducing poor food management, waste, and frustration.">
+                        Progetto di Ergonomia Cognitiva volto alla realizzazione di un prodotto che risolva un bisogno
+                        dell'utenza universitaria. Si presenta la realizzazione del prototipo di un’interfaccia che
+                        agevoli l'organizzazione efficace dei pasti e della spesa per studenti universitari e lavoratori
+                        a partire dai 25 anni che gestiscono i propri pasti da asporto, condizione che spesso si declina
+                        in una cattiva gestione alimentare, sprechi e frustrazione.</p>
+                    <button class="discover-btn btn-primary"></button>
+                </div>
+            </div>
+
+            <!-- SEZIONE DA ESPANDERE -->
+            <div class="project-details mt-4">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div class="col">
+                                <h5>Target</h5>
+                                <p data-it="Studenti e lavoratori che gestiscono pasti da asporto"
+                                    data-en="Students and workers who handle their own take out meals">Studenti e
+                                    lavoratori che gestiscono pasti da asporto</p>
+                            </div>
+                            <div class="col">
+                                <h5>Task Completion Rate</h5>
+                                <p>61.9%</p>
+                            </div>
+                        </div>
+
+                        <h5 data-it="Descrizione" data-en="Description">Descrizione</h5>
+                        <p data-it="L’interfaccia Prep-à-Porter guida l’utente nella gestione dei pasti da asporto, con funzionalità che permettono di pianificare i pasti, tenere traccia delle scorte alimentari e ridurre sprechi:"
+                            data-en="The Prep-à-Porter interface guides users in managing take-away meals, with features that allow meal planning, tracking food supplies, and reducing waste:">
+                            L’interfaccia Prep-à-Porter guida l’utente nella gestione dei pasti da asporto, con
+                            funzionalità che permettono di pianificare i pasti, tenere traccia delle scorte alimentari e
+                            ridurre sprechi:
+                        </p>
+                        <p data-it="Gestione spesa: crea automaticamente liste della spesa basate sui pasti pianificati, a seconda di quale ricetta bilanciata si seleziona come da preparare."
+                            data-en="Grocery management: automatically creates shopping lists based on planned meals, depending on which balanced recipe is selected for preparation.">
+                            <b>Gestione spesa:</b> crea automaticamente liste della spesa basate sui pasti pianificati,
+                            a seconda di quale ricetta bilanciata si seleziona come da preparare.
+                        </p>
+
+                        <p data-it="Gamification: con il fine di favorire un'accettazione e una maggior costanza riguardo l'uso dell'app, si è pensato di inserire elementi di gamification, elargiti tramite il contatto con la mascotte del prodotto."
+                            data-en="Gamification: in order to encourage user adoption and consistent app usage, gamification elements were introduced through interactions with the product’s mascot.">
+                            <b>Gamification:</b> con il fine di favorire un'accettazione e una maggior costanza riguardo
+                            l'uso dell'app, si è pensato di inserire elementi di gamification, elargiti tramite il
+                            contatto con la mascotte del prodotto.
+                        </p>
+                        <h6 data-it="Il mio contributo:" data-en="My Contribution:">Il mio contributo:</h6>
+                        <p data-it="Ho partecipato attivamente alle fasi di brainstorming, creazione e palette, oltre a gestire la presentazione a supporto della consegna del progetto. Ho curato inoltre le User Personas e gli User Profiles svolgendo infine 3 Think Aloud con paper prototyping."
+                            data-en="I actively participated in brainstorming sessions, creation, and color palette design, as well as managing the presentation for project delivery. I also handled User Personas and User Profiles, conducting 3 Think Aloud sessions using paper prototyping.">
+                            Ho partecipato attivamente alle fasi di brainstorming, creazione e palette, oltre a gestire
+                            la presentazione a supporto della consegna del progetto. Ho curato inoltre le User Personas
+                            e gli User Profiles svolgendo infine 3 Think Aloud con paper prototyping.
+                        </p>
+
+                        <h6 data-it="Link" data-en="Links">Link</h6>
+                        <p><a style="color: blueviolet;"
+                                href="https://www.canva.com/design/DAGhbGJYU_4/SG00iSAvvWw_mxhgodaruA/view?utm_content=DAGhbGJYU_4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hee3c92dac6"
+                                data-it="Presentazione" data-en="Slides presentation">Presentazione</a></p>
+                        <p><a style="color: blueviolet;"
+                                href="https://www.figma.com/design/04BJ4Dnhr20G4r0eEBLgqH/Progetto-di-Ergonomia?node-id=0-1&t=tMRTzL3ZcL2sb2uE-1"
+                                data-it="Link alla progettazione" data-en="Link to full project design">Link alla
+                                progettazione</a></p>
+                    </div>
+
+                    <div class="col-md-5 figmacontainer">
+                        <img src="home.png" alt="home progetto 3" class="project-img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--PROGETTO 4-->
+    <div id="terrac137" class="py-5 about project-container">
+        <div class="container-xl">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7">
+                    <h3 class="titleproject">Terra C-137</h3>
+                    <p data-it="Progetto completo di un’interfaccia totem da viaggio, basata sulla consegna di un brief con il compito di sviluppare un totem informativo per presentare le attrazioni di un pianeta terra alternativo la cui estinzione a causa di un fungo letale ha definitivamente modificato flora e fauna. Dal brief di progetto si è sviluppata interamente l’aspetto del pianeta, il concept, il brand e l’interfaccia, attraverso HTML, CSS, JS e Bootstrap."
+                        data-en="Complete project of a travel totem interface, based on a given brief to develop an informational totem presenting attractions of an alternate Earth, whose flora and fauna were permanently altered by a lethal fungus. The brief guided the design of the planet’s visual identity, the concept of choice, brand and interface using HTML, CSS, JS and Bootstrap.">
+                        Progetto completo di un’interfaccia totem da viaggio, basata sulla consegna di un brief con il
+                        compito di sviluppare un totem informativo per presentare le attrazioni di un pianeta terra
+                        alternativo la cui estinzione a causa di un fungo letale ha definitivamente modificato flora e
+                        fauna. Dal brief di progetto si è sviluppata interamente l’aspetto del pianeta, il concept, il
+                        brand e l’interfaccia, attraverso HTML, CSS, JS e Bootstrap</p>
+                    <button class="discover-btn btn-primary"></button>
+                </div>
+                <div class="col-md-5 d-flex justify-content-center">
+                    <img src="progetto4.png" class="project-img" />
+                </div>
+            </div>
+            <!-- SEZIONE DA ESPANDERE -->
+            <div class="project-details mt-4" style="background-color: #42619C">
+                <div class="row">
+
+                    <!-- COLONNA SINISTRA: PROTOTIPO -->
+                    <div class="col-md-5 figmacontainer mb-4 col">
+                        <img src="totemhome.png" alt="progetto 4" class="project-img-responsive">
+                    </div>
+
+                    <!-- COLONNA DESTRA: DESCRIZIONE -->
+                    <div class="col-md-7" style="color:white;">
+                        <div class="row">
+                            <div class="col">
+                                <h5>Target</h5>
+                                <p data-it="Esploratori, famiglie, studiosi"
+                                    data-en="Explorers, families and researchers">Esploratori, famiglie, studiosi</p>
+                            </div>
+                            <div class="col">
+                                <h5>Task Completion Rate</h5>
+                                <p data-it="Non testata" data-en="Untested">Non testata</p>
+                            </div>
+                        </div>
+
+                        <h5 data-it="Descrizione" data-en="Description">Descrizione</h5>
+                        <p data-it="Progettazione di un’interfaccia totem informativo per turisti su Terra C-137, un pianeta parallelo con fauna mutante e storia post-apocalittica. L’interfaccia guida l’esplorazione del pianeta, fornendo mappe interattive, schede informative, itinerari personalizzati e servizi come prenotazioni e traduzione universale. L'obiettivo principale del progetto era offrire un’esperienza accessibile, intuitiva e coinvolgente per diversi tipi di visitatori, promuovendo turismo responsabile e usabilità universale."
+                            data-en="Design of an informational totem interface for tourists on Terra C-137, a parallel planet with mutant wildlife and a post-apocalyptic history. The interface guides exploration of the planet, providing interactive maps, informational cards, personalized itineraries, and services such as booking and universal translation. The main goal of the project was to deliver an accessible, intuitive, and engaging experience for different types of visitors, promoting responsible tourism and universal usability.">
+                            Progettazione di un’interfaccia totem informativo per turisti su Terra C-137, un pianeta
+                            parallelo con fauna mutante e storia post-apocalittica. L’interfaccia guida l’esplorazione
+                            del pianeta, fornendo mappe interattive, schede informative, itinerari personalizzati e
+                            servizi come prenotazioni e traduzione universale. L'obiettivo principale del progetto era
+                            offrire un’esperienza accessibile, intuitiva e coinvolgente per diversi tipi di visitatori,
+                            promuovendo turismo responsabile e usabilità universale.
+                        </p>
+
+                        <p data-it="Il concept generato dal brief è il seguente: su Terra C-137, una polmonite derivante dal fungo Nihil Chrysogenum stermina gran parte della popolazione, causando il collasso dell’Impero Romano d’Occidente e impedendo la ripresa umana. Il fungo continua a diffondersi, mutando animali e piante, mentre i pochi sopravvissuti si rifugiano in villaggi, ma alla fine la scarsità di risorse li porta all’estinzione."
+                            data-en="The concept derived from the brief is as follows: on Terra C-137, pneumonia caused by the Nihil Chrysogenum fungus wipes out most of the population, leading to the collapse of the Western Roman Empire and preventing human recovery. The fungus continues to spread, mutating animals and plants, while the few survivors take refuge in villages, but eventually resource scarcity drives them to extinction.">
+                            Il concept generato dal brief è il seguente: su Terra C-137, una polmonite derivante dal
+                            fungo Nihil Chrysogenum stermina gran parte della popolazione, causando il collasso
+                            dell’Impero Romano d’Occidente e impedendo la ripresa umana. Il fungo continua a
+                            diffondersi, mutando animali e piante, mentre i pochi sopravvissuti si rifugiano in
+                            villaggi, ma alla fine la scarsità di risorse li porta all’estinzione.
+                        </p>
+
+
+                        <p data-it="Mappa interattiva: consente di esplorare Terra C-137, visualizzare punti d’interesse e accedere a informazioni dettagliate su ciascun luogo."
+                            data-en="Interactive map: enables users to explore Earth C-137, view points of interest, and access detailed information for each location.">
+                            <b>Mappa interattiva</b>: consente di esplorare Terra C-137, visualizzare punti d’interesse
+                            e accedere a informazioni dettagliate su ciascun luogo.
+                        </p>
+
+                        <p data-it="Info: raccoglie schede informative con descrizioni approfondite dei luoghi e contenuti di approfondimento."
+                            data-en="Info: provides informational cards with in-depth descriptions of locations and additional contextual content.">
+                            <b>Info</b>: raccoglie schede informative con descrizioni approfondite dei luoghi e
+                            contenuti di approfondimento.
+                        </p>
+
+                        <p data-it="Attività per te: sezione dedicata a itinerari e attività personalizzate in base alle preferenze dell’utente, con questionari guidati e funzionalità di prenotazione."
+                            data-en="Activities for you: a dedicated section offering personalized itineraries and activities based on user preferences, featuring guided questionnaires and booking functionalities.">
+                            <b>Attività per te</b>: sezione dedicata a itinerari e attività personalizzate in base alle
+                            preferenze dell’utente, con questionari guidati e funzionalità di prenotazione.
+                        </p>
+
+                        <p data-it="Mezzi di trasporto: consente di cercare stazioni e pianificare itinerari, visualizzando mappe interattive dei percorsi disponibili."
+                            data-en="Transportation: allows users to search for stations and plan routes, displaying interactive maps of available paths.">
+                            <b>Mezzi di trasporto</b>: consente di cercare stazioni e pianificare itinerari,
+                            visualizzando mappe interattive dei percorsi disponibili.
+                        </p>
+
+                        <p data-it="Modalità esploratore: modalità avanzata che supporta segnalazioni contestuali e interazioni specifiche durante l’esplorazione del pianeta."
+                            data-en="Explorer mode: an advanced mode supporting contextual reporting and specific interactions during planetary exploration.">
+                            <b>Modalità esploratore</b>: modalità avanzata che supporta segnalazioni contestuali e
+                            interazioni specifiche durante l’esplorazione del pianeta.
+                        </p>
+
+
+                        <h6 data-it="Il mio contributo" data-en="My Contribution">Il mio contributo</h6>
+                        <p data-it="Ho seguito tutte le fasi di UxD, dall'analisi del brief al testing fino alla creazione del progetto tramite HTML, CSS e Bootstrap. Ho generato il concept di partenza che è poi stato sviluppato in gruppo ed ho infine curato e gestito la documentazione, la presentazione del color contrast checker secondo le norme del WCAG, oltre ad aver organizzato la documentazione a corredo della consegna e sviluppato con HTML CSS e JS la schermata dei Trasporti, il pop-up della prenotazione e quello di conferma dell'uscita del questionario."
+                            data-en="I followed all phases of UX Design, from brief analysis to testing, up to project creation using HTML, CSS, and Bootstrap. I generated the initial concept, which was then developed in a team, and finally handled and managed documentation, the presentation of the color contrast checker according to WCAG standards, organized the supporting documentation for delivery, and developed the Transport screen, booking pop-up, and survey completion confirmation using HTML, CSS, and JS.">
+                            Ho seguito tutte le fasi di UxD, dall'analisi del brief al testing fino alla creazione del
+                            progetto tramite HTML, CSS e Bootstrap. Ho generato il concept di partenza che è poi stato
+                            sviluppato in gruppo ed ho infine curato e gestito la documentazione, la presentazione del
+                            color contrast checker secondo le norme del WCAG, oltre ad aver organizzato la
+                            documentazione a corredo della consegna e sviluppato con HTML CSS e JS la schermata dei
+                            Trasporti, il pop-up della prenotazione e quello di conferma dell'uscita del questionario.
+                        </p>
+
+
+                        <h6 data-it="Link" data-en="Links">Link</h6>
+                        <p><a style="color: #fffff1;"
+                                href="https://www.canva.com/design/DAGlew-Jtdo/043SdyHH7nCLTtDYpej73w/view?utm_content=DAGlew-Jtdo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb5a1d09ada"
+                                data-it="Presentazione" data-en="Slide presentation">Presentazione</a></p>
+                        <p><a style="color: #fffff1;"
+                                href="https://www.canva.com/design/DAGleyDhl64/QMFlbV8yf9QWoYiseQvYsA/view?utm_content=DAGleyDhl64&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h64bef54015">Design
+                                System</a></p>
+                        <p><a style="color: #fffff1;"
+                                href="https://www.figma.com/design/yiR0hbEmEaBk7Hn9758j6G/CVeDI?node-id=1387-18096&t=D7dfw6T98I1JiQxR-1"
+                                data-it="Link alla presentazione" data-en="Link to full design project">Link alla
+                                progettazione</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--PROGETTO 5-->
+    <div id="varmblixt" class="proj py-5 project-container justify-content-center">
+        <div class="container-xl">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-5 d-flex justify-content-center">
+                    <img src="progetto5.png" class="project-img" />
+                </div>
+                <div class="col-md-7">
+                    <h3 class="titleproject">Varmblixt</h3>
+                    <p data-it="Realizzazione di un intero sito web tramite Wordpress basato su una promozione fittizia del prodotto Ikea Varmblixt. Il progetto consisteva nella realizzazione della promozione, del concept del sito, dalla moodboard alla resa finale, producendo tre differenti visualizzazioni, per tablet, desktop e mobile, con i rispettivi wireframe e mockup, considerando la clientela in target e i suoi specifici bisogni nell'intero processo."
+                        data-en="Development of a full website using WordPress for a fictitious promotion of Ikea’s Varmblixt product. The project covered the promotion and site concept from moodboard to final delivery, producing three layouts for tablet, desktop, and mobile, with corresponding wireframes and mockups, tailored to the target audience and their specific needs.">
+                        Realizzazione di un intero sito web tramite Wordpress basato su una promozione fittizia del
+                        prodotto Ikea Varmblixt. Il progetto consisteva nella realizzazione della promozione, del
+                        concept del sito, dalla moodboard alla resa finale, producendo tre differenti visualizzazioni,
+                        per tablet, desktop e mobile, con i rispettivi wireframe e mockup, considerando la clientela in
+                        target e i suoi specifici bisogni nell'intero processo.</p>
+                    <button class="discover-btn btn-primary"></button>
+                </div>
+            </div>
+
+            <!-- SEZIONE DA ESPANDERE -->
+            <div class="project-details mt-4">
+                <div class="row">
+
+                    <!-- COLONNA TESTO -->
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div class="col">
+                                <h5>Target</h5>
+                                <p data-it="Appassionati di design, molteplici range d'età"
+                                    data-en="Design enthusiasts, various age ranges">Appassionati di design, molteplici
+                                    range d'età</p>
+                            </div>
+                            <div class="col">
+                                <h5>Task Completion Rate</h5>
+                                <p data-it="Non testata" data-en="Untested">Non testata</p>
+                            </div>
+                        </div>
+
+                        <h5 data-it="Descrizione" data-en="Description">Descrizione</h5>
+                        <p data-it="Il progetto Varmblixt nasce come realizzazione di un sito promozionale fittizio basato sull'omonimo prodotto Ikea. Il lavoro ha previsto concept, moodboard e sviluppo visuale in tre versioni responsive."
+                            data-en="The Varmblixt project was created as a fictitious promotional website based on the Ikea product of the same name. The work included concept, moodboard, and visual development in three responsive versions.">
+                            Il progetto Varmblixt nasce come realizzazione di un sito promozionale fittizio basato
+                            sull'omonimo prodotto Ikea. Il lavoro ha previsto concept, moodboard e sviluppo visuale in
+                            tre versioni responsive.
+                        </p>
+
+                        <p data-it="Una volta individuato il prodotto, la richiesta prevedeva la creazione di un'offerta accattivante, richiedendo quindi un buon uso di CTA e informazioni chiare per l'ottenimento della promozione in esame."
+                            data-en="Once the product was identified, the brief required creating an appealing offer, demanding effective use of CTAs and clear information to obtain the promotion.">
+                            Una volta individuato il prodotto, la richiesta prevedeva la creazione di un'offerta
+                            accattivante, richiedendo quindi un buon uso di CTA e informazioni chiare per l'ottenimento
+                            della promozione in esame.
+                        </p>
+
+                        <p data-it="Versione Desktop: layout a più colonne, con focus su estetica e navigabilità."
+                            data-en="Desktop version: multi-column layout with a strong focus on visual design and navigability.">
+                            <b>Versione Desktop:</b> layout a più colonne, focus su estetica e navigabilità.
+                        </p>
+
+                        <p data-it="Versione Tablet: interfaccia più compatta e ottimizzata per l’interazione touch."
+                            data-en="Tablet version: a more compact interface optimized for touch interaction.">
+                            <b>Versione Tablet:</b> interfaccia più compatta e ottimizzata all'interazione touch.
+                        </p>
+
+                        <p data-it="Versione Mobile: struttura verticale con navigazione semplificata e call to action evidenti."
+                            data-en="Mobile version: vertical structure with simplified navigation and clearly visible calls to action.">
+                            <b>Versione Mobile:</b> struttura verticale con navigazione semplificata e call to action
+                            evidenti.
+                        </p>
+
+                        <p data-it="Il progetto include wireframe, mockup completi e struttura del sito realizzata su Wordpress."
+                            data-en="The project includes wireframes, complete mockups, and the site structure built on WordPress.">
+                            Il progetto include wireframe, mockup completi e struttura del sito realizzata su Wordpress.
+                        </p>
+
+                        <h6 data-it="Il mio contributo" data-en="My Contribution">Il mio contributo</h6>
+                        <p data-it="Ho contribuito a gestire la ricerca preliminare di immagini, colori e stile. Ho gestito la moodboard, i copy e l'intera realizzazione dei mockup."
+                            data-en="I contributed by managing preliminary research on images, colors, and style. I handled the moodboard, copywriting, and the complete creation of the mockups.">
+                            Ho contribuito a gestire la ricerca preliminare di immagini, colori e stile. Ho gestito la
+                            moodboard, i copy e l'intera realizzazione dei mockup.
+                        </p>
+
+                        <h6 data-it="Link" data-en="Links">Link</h6>
+                        <p><a style="color: blueviolet;"
+                                href="https://www.figma.com/design/BoTpcadfRHE16h5Ju3lJIs/sito-strumenti?node-id=0-1&t=ruZphSvTBXT0rocE-1"
+                                data-it="Link alla progettazione completa" data-en="Link to full design project">Link
+                                alla progettazione</a></p>
+                    </div>
+
+                    <!-- COLONNA IMMAGINE (STAVA NELL'ALTRO DIV, ORA È CORRETTA) -->
+                    <div class="col-md-5 figmacontainer mb-4">
+                        <div class="container-s">
+                            <img src="homevarmblixt.png" alt="home progetto 5" class="project-img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACTS -->
+    <section class="hero d-flex flex-column justify-content-center text-center">
+        <h3 class="mb-4" data-it="I miei recapiti" data-en="My Contacts">I miei recapiti</h3>
+
+        <div class="d-flex justify-content-center gap-4 flex-wrap container-xl">
+            <a class="contact-icon" id="phone-copy" data-phone="+39 3931348044"><i class="bi bi-telephone"></i></a>
+            <a class="contact-icon" id="email-copy" data-email="letizia.quaroni@hotmail.it"><i
+                    class="bi bi-envelope"></i></a>
+            <a class="contact-icon" href="https://github.com/Let1zia99"><i class="bi bi-github"></i></a>
+            <a class="contact-icon" href="www.linkedin.com/in/letiziaquaroni"><i class="bi bi-linkedin"></i></a>
+        </div>
+    </section>
+    <script>
+        const emailIcon = document.getElementById('email-copy');
+
+        emailIcon.addEventListener('click', () => {
+            const email = emailIcon.getAttribute('data-email');
+            navigator.clipboard.writeText(email)
+                .then(() => {
+                    alert('Indirizzo email copiato negli appunti: ' + email);
+                })
+                .catch(err => {
+                    console.error('Errore nel copiare la mail: ', err);
+                });
+        });
+
+        // Copia telefono
+        const phoneIcon = document.getElementById('phone-copy');
+        phoneIcon.addEventListener('click', () => {
+            const phone = phoneIcon.getAttribute('data-phone');
+            navigator.clipboard.writeText(phone)
+                .then(() => {
+                    alert('Numero di telefono copiato negli appunti: ' + phone);
+                })
+                .catch(err => {
+                    console.error('Errore nel copiare il numero: ', err);
+                });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const hash = window.location.hash;
+
+    if (!hash) return;
+
+    const targetProject = document.querySelector(hash);
+    if (!targetProject) return;
+
+    // Scroll preciso (offset navbar)
+    const yOffset = -50;
+    const y = targetProject.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+
+    // Apri automaticamente i dettagli
+    const details = targetProject.querySelector(".project-details");
+    const button = targetProject.querySelector(".discover-btn");
+
+    if (details && button) {
+        details.classList.add("open");
+        button.innerHTML = '<i class="bi bi-x-lg"></i>';
+    }
+});
+
+        const toggle = document.getElementById('languageToggle');
+        const translatableElements = document.querySelectorAll('[data-it][data-en]');
+
+        function setLanguage(lang) {
+            translatableElements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+            toggle.checked = (lang === 'en');
+            localStorage.setItem('lang', lang);
+        }
+
+        // Imposta la lingua salvata o di default IT
+        const savedLang = localStorage.getItem('lang') || 'it';
+        setLanguage(savedLang);
+
+        toggle.addEventListener('change', () => {
+            setLanguage(toggle.checked ? 'en' : 'it');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

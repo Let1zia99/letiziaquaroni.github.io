@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letizia Quaroni – UX/UI Designer & Frontend Developer</title>
+
+    <!-- GOOGLE FONTS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&family=Beiruti:wght@300;400;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- FAVICON -->
+    <link rel="icon" href="logo.png" type="image/png" />
+
+    <!-- BOOTSTRAP ICONS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- CSS ESTERNO -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="brand-logo">
+                <a href="Portfolio-Quaroni-Home.html">
+                    <img src="logo.png" alt="Home">
+                </a>
+            </div>
+            <div class="language-switch">
+                <input type="checkbox" id="languageToggle" class="language-toggle">
+                <label for="languageToggle" class="toggle-label">
+                    <span class="toggle-circle"></span>
+                    <span class="toggle-text on">IT</span>
+                    <span class="toggle-text off">EN</span>
+                </label>
+            </div>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#" data-it="Homepage"
+                            data-en="Home">Homepage</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Portfolio-Quaroni-Progetti.html" data-it="Progetti"
+                            data-en="Projects">Progetti</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- HERO -->
+    <section class="hero d-flex flex-column justify-content-center text-center">
+        <h1>Letizia Quaroni</h1>
+        <h2>UX/UI Designer & Frontend Developer</h2>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="aboutme py-5">
+        <div class="container-xl">
+            <div class="row align-items-center">
+                <div class="col-lg-8 about-text">
+                    <p class="bio-short"
+                        data-it="Sono una designer appassionata di creatività, innovazione e comunicazione visiva. Attualmente sto completando un percorso accademico in Teoria e Tecnologia della Comunicazione presso l’Università degli Studi di Milano Bicocca. Sto inoltre consolidando le mie competenze nel lato informatico, come programmatrice front-end."
+                        data-en="I am a designer passionate about creativity, innovation, and visual communication. Currently completing an academic program in Communication Theory and Technology at the University of Milano Bicocca. I am also consolidating my skills in front-end programming.">
+                        Sono una designer appassionata di creatività, innovazione e comunicazione visiva. Attualmente
+                        sto completando un percorso accademico in Teoria e Tecnologia della Comunicazione presso
+                        l’Università degli Studi di Milano Bicocca. Sto inoltre consolidando le mie competenze nel lato
+                        informatico, come programmatrice front-end.
+                    </p>
+
+                    <p class="bio-long"
+                        data-it="Ho una laurea in marketing conseguita presso l’Università degli Studi di Pavia, un percorso che mi ha permesso di sviluppare competenze nella comunicazione e comprendere le dinamiche che connettono brand e persone. Mi distinguo per le mie doti comunicative, l’attenzione ai dettagli e un approccio diligente al lavoro."
+                        data-en="I have a degree in marketing from University of Pavia, which allowed me to develop communication skills and understand the dynamics connecting brands and people. I stand out for my communication skills, attention to detail, and diligent work approach.">
+                        Ho una laurea in marketing conseguita presso l’Università degli Studi di Pavia, un percorso che
+                        mi ha permesso di sviluppare competenze nella comunicazione e comprendere le dinamiche che
+                        connettono brand e persone. Mi distinguo per le mie doti comunicative, l’attenzione ai dettagli
+                        e un approccio diligente al lavoro.
+                    </p>
+                </div>
+                <div class="col-lg-4 d-flex justify-content-center justify-content-lg-end">
+                    <img src="foto.png" alt="Foto" class="profile-img mobile-right-img" />
+                </div>
+                <!-- FRECCIA CENTRATA -->
+                <div class="toggle-container d-lg-none text-center mt-2">
+                    <button class="toggle-about btn btn-link p-0 text-white">
+                        <i class="bi bi-chevron-down fs-3"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills">
+        <div id="skillsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <!-- BLOCCO 1 -->
+                <div class="carousel-item active">
+                    <div class="container content-center">
+                        <h3 class="mb-4 text-center" data-it="Programmazione" data-en="Programming">Programmazione</h3>
+                        <div class="skill-bars">
+                            <p>HTML</p>
+                            <div class="bar"><span style="width: 90%"></span></div>
+
+                            <p>CSS</p>
+                            <div class="bar"><span style="width: 90%"></span></div>
+
+                            <p>JS</p>
+                            <div class="bar"><span style="width: 50%"></span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLOCCO 2 -->
+                <div class="carousel-item">
+                    <div class="container content-center">
+                        <h3 class="mb-4 text-center" data-it="Lingue" data-en="Languages">Lingue</h3>
+                        <div class="skill-bars">
+                            <p data-it="Italiano" data-en="Italian">Italiano</p>
+                            <div class="bar"><span style="width: 100%"></span></div>
+
+                            <p data-it="Inglese" data-en="English">Inglese</p>
+                            <div class="bar"><span style="width: 98%"></span></div>
+
+                            <p data-it="Francese" data-en="French">Francese</p>
+                            <div class="bar"><span style="width: 70%"></span></div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLOCCO 3 -->
+                <div class="carousel-item">
+                    <div class="container content-center">
+                        <h3 class="mb-4 text-center" data-it="Grafica" data-en="Design">Grafica</h3>
+                        <div class="skill-bars">
+                            <p>Figma</p>
+                            <div class="bar"><span style="width: 95%"></span></div>
+
+                            <p>Canva</p>
+                            <div class="bar"><span style="width: 95%"></span></div>
+
+                            <p>Mirò</p>
+                            <div class="bar"><span style="width: 95%"></span></div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Frecce -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#skillsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#skillsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+
+    <!-- PROJECT -->
+    <section class="projects">
+        <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <!-- PROGETTO 1 -->
+                <div class="carousel-item project-container active">
+                    <div class="container py-5 about">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <img src="progetto1.png" class="project-img" />
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Carrie – Caregiver Assistant </h3>
+                                <p data-it="Progetto di tesi di un'interfaccia chatbot con elementi di realtà virtuale a supporto del caregiving informale. Il progetto è stato svolto attraverso un'analisi di ricerca letteraria su caregiving, italiano ed estero, e sulle tecnologie chatbot e VR. Concentrato poi nell'interfaccia realizzata su Figma attraverso il ciclo di Interaction Design, distribuito in tre cicli iterativi."
+                                    data-en="Thesis project on a chatbot interface with virtual reality elements to support informal caregiving. The project involved a literature review on caregiving, both in Italy and internationally, and on chatbot and VR technologies. It was then focused on the interface designed in Figma following the Interaction Design process, completed in three iterative cycles.">
+                                    Progetto di tesi di un'interfaccia chatbot con elementi di realtà virtuale a
+                                    supporto del caregiving informale. Il progetto è stato svolto attraverso un'analisi
+                                    di ricerca letteraria su caregiving, italiano ed estero, e sulle tecnologie chatbot
+                                    e VR. Concentrato poi nell'interfaccia realizzata su Figma attraverso il ciclo di
+                                    Interaction Design, distribuito in tre cicli iterativi.</p>
+                                <a href="Portfolio-Quaroni-Progetti.html#carrie" class="discover-btn bi bi-hand-index">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROGETTO 2 -->
+                <div class="carousel-item project-container">
+                    <div class="container py-5 about">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <img src="progetto2.png" class="project-img" />
+                            </div>
+                            <div class="col-md-6">
+                                <h3>AntiTruffApp</h3>
+                                <p data-it="Progettazione di un’interfaccia volta all’istruzione della popolazione anziana riguardo le truffe e le frodi online, per garantire una maggiore autonomia dei soggetti fragili che si affacciano al mondo tecnologico. Il progetto basa le sue fondamenta nella ricerca in letteratura, per individuare criticità del tema e possibili soluzioni, che sono state declinate nella progettazione  del ciclo di Interaction Design."
+                                    data-en="Design of a user interface aimed at educating the elderly on online scams and frauds, to enhance autonomy for vulnerable users engaging with technology nowadays. The project was grounded in literature research to identify challenges, threats and potential solutions, which were then conceptualized and later applied through Interaction Design process.">
+                                    Progettazione di un’interfaccia volta all’istruzione della popolazione anziana
+                                    riguardo le truffe e le frodi online, per garantire una maggiore autonomia dei
+                                    soggetti fragili che si affacciano al mondo tecnologico. Il progetto basa le sue
+                                    fondamenta nella ricerca in letteratura, per individuare criticità del tema e
+                                    possibili soluzioni, che sono state declinate nella progettazione del ciclo di
+                                    Interaction Design.</p>
+                                <a href="Portfolio-Quaroni-Progetti.html#antitruffapp"
+                                    class="discover-btn bi bi-hand-index"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROGETTO 3 -->
+                <div class="carousel-item project-container">
+                    <div class="container py-5 about">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <img src="progetto3.png" class="project-img" />
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Prep-à-Porter</h3>
+                                <p data-it="Progetto di Ergonomia Cognitiva volto alla realizzazione di un prodotto che risolva un bisogno dell'utenza universitaria. Si presenta la realizzazione del prototipo di un’interfaccia che agevoli l'organizzazione efficace dei pasti e della spesa per studenti universitari e lavoratori a partire dai 25 anni che gestiscono i propri pasti da asporto, condizione che spesso si declina in una cattiva gestione alimentare, sprechi e frustrazione."
+                                    data-en="Cognitive Ergonomics project focused on creating a user interface solution addressing university students' specific needs. The prototype interface facilitates efficient meal and grocery management for students and workers aged 25+, helping them handle takeout meals and cooking while reducing poor food management, waste, and frustration.">
+                                    Progetto di Ergonomia Cognitiva volto alla realizzazione di un prodotto che risolva
+                                    un bisogno dell'utenza universitaria. Si presenta la realizzazione del prototipo di
+                                    un’interfaccia che agevoli l'organizzazione efficace dei pasti e della spesa per
+                                    studenti universitari e lavoratori a partire dai 25 anni che gestiscono i propri
+                                    pasti da asporto, condizione che spesso si declina in una cattiva gestione
+                                    alimentare, sprechi e frustrazione.</p>
+                                <a href="Portfolio-Quaroni-Progetti.html#prepaporter"
+                                    class="discover-btn bi bi-hand-index"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROGETTO 4 -->
+                <div class="carousel-item project-container">
+                    <div class="container py-5 about">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <img src="progetto4.png" class="project-img" />
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Terra C-137</h3>
+                                <p data-it="Progetto completo di un’interfaccia totem da viaggio, basata sulla consegna di un brief con il compito di sviluppare un totem informativo per presentare le attrazioni di un pianeta terra alternativo la cui estinzione a causa di un fungo letale ha definitivamente modificato flora e fauna. Dal brief di progetto si è sviluppata interamente l’aspetto del pianeta, il concept, il brand e l’interfaccia, attraverso HTML, CSS, JS e Bootstrap."
+                                    data-en="Complete project of a travel totem interface, based on a given brief to develop an informational totem presenting attractions of an alternate Earth, whose flora and fauna were permanently altered by a lethal fungus. The brief guided the design of the planet’s visual identity, the concept of choice, brand and interface using HTML, CSS, JS and Bootstrap.">
+                                    Progetto completo di un’interfaccia totem da viaggio, basata sulla consegna di un
+                                    brief con il compito di sviluppare un totem informativo per presentare le attrazioni
+                                    di un pianeta terra alternativo la cui estinzione a causa di un fungo letale ha
+                                    definitivamente modificato flora e fauna. Dal brief di progetto si è sviluppata
+                                    interamente l’aspetto del pianeta, il concept, il brand e l’interfaccia, attraverso
+                                    HTML, CSS, JS e Bootstrap</p>
+                                <a href="Portfolio-Quaroni-Progetti.html#terrac137"
+                                    class="discover-btn bi bi-hand-index"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROGETTO 5 -->
+                <div class="carousel-item project-container">
+                    <div class="container py-5 about">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <img src="progetto5.png" class="project-img" />
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Varmblixt</h3>
+                                <p data-it="Realizzazione di un intero sito web tramite Wordpress basato su una promozione fittizia del prodotto Ikea Varmblixt. Il progetto consisteva nella realizzazione della promozione, del concept del sito, dalla moodboard alla resa finale, producendo tre differenti visualizzazioni, per tablet, desktop e mobile, con i rispettivi wireframe e mockup, considerando la clientela in target e i suoi specifici bisogni nell'intero processo."
+                                    data-en="Development of a full website using WordPress for a fictitious promotion of Ikea’s Varmblixt product. The project covered the promotion and site concept from moodboard to final delivery, producing three layouts for tablet, desktop, and mobile, with corresponding wireframes and mockups, tailored to the target audience and their specific needs.">
+                                    Realizzazione di un intero sito web tramite Wordpress basato su una promozione
+                                    fittizia del prodotto Ikea Varmblixt. Il progetto consisteva nella realizzazione
+                                    della promozione, del concept del sito, dalla moodboard alla resa finale, producendo
+                                    tre differenti visualizzazioni, per tablet, desktop e mobile, con i rispettivi
+                                    wireframe e mockup, considerando la clientela in target e i suoi specifici bisogni
+                                    nell'intero processo.</p>
+                                <a href="Portfolio-Quaroni-Progetti.html#varmblixt"
+                                    class="discover-btn bi bi-hand-index"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frecce -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+    </section>
+
+
+    <!-- CONTACTS -->
+    <section class="hero d-flex flex-column justify-content-center text-center">
+        <h3 class="mb-4" data-it="I miei recapiti" data-en="My Contacts">I miei recapiti</h3>
+
+        <div class="d-flex justify-content-center gap-4 flex-wrap container-xl">
+            <a class="contact-icon" id="phone-copy" data-phone="+39 3931348044"><i class="bi bi-telephone"></i></a>
+            <a class="contact-icon" id="email-copy" data-email="letizia.quaroni@hotmail.it"><i
+                    class="bi bi-envelope"></i></a>
+            <a class="contact-icon" href="https://github.com/Let1zia99"><i class="bi bi-github"></i></a>
+            <a class="contact-icon" href="www.linkedin.com/in/letiziaquaroni"><i class="bi bi-linkedin"></i></a>
+        </div>
+    </section>
+    <script>
+        const emailIcon = document.getElementById('email-copy');
+
+        emailIcon.addEventListener('click', () => {
+            const email = emailIcon.getAttribute('data-email');
+            navigator.clipboard.writeText(email)
+                .then(() => {
+                    alert('Indirizzo email copiato negli appunti: ' + email);
+                })
+                .catch(err => {
+                    console.error('Errore nel copiare la mail: ', err);
+                });
+        });
+
+        // Copia telefono
+        const phoneIcon = document.getElementById('phone-copy');
+        phoneIcon.addEventListener('click', () => {
+            const phone = phoneIcon.getAttribute('data-phone');
+            navigator.clipboard.writeText(phone)
+                .then(() => {
+                    alert('Numero di telefono copiato negli appunti: ' + phone);
+                })
+                .catch(err => {
+                    console.error('Errore nel copiare il numero: ', err);
+                });
+        });
+        const toggle = document.getElementById('languageToggle');
+        const translatableElements = document.querySelectorAll('[data-it][data-en]');
+
+        function setLanguage(lang) {
+            translatableElements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+            toggle.checked = (lang === 'en');
+            localStorage.setItem('lang', lang);
+        }
+
+        // Imposta la lingua salvata o di default IT
+        const savedLang = localStorage.getItem('lang') || 'it';
+        setLanguage(savedLang);
+
+        toggle.addEventListener('change', () => {
+            setLanguage(toggle.checked ? 'en' : 'it');
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const toggleBtn = document.querySelector('.toggle-about');
+        const aboutText = document.querySelector('.about-text');
+
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                aboutText.classList.toggle('expanded');
+                toggleBtn.classList.toggle('expanded');
+            });
+        }
+    </script>
+</body>
+
+</html>
