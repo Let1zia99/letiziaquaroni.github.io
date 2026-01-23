@@ -1,10 +1,9 @@
-# Let1zia99.letiziaquaroni.github.io
+# [Let1zia99.letiziaquaroni.github.io](https://let1zia99.github.io/letiziaquaroni.github.io/)
 # Portfolio – Letizia Quaroni
 
 UX/UI Designer & Front-End Developer  
 
-🔗 **Live portfolio:** https://Let1zia99.letiziaquaroni.github.io
-
+🔗 **Live portfolio:** [Let1zia99.letiziaquaroni.github.io](https://let1zia99.github.io/letiziaquaroni.github.io/)
 ---
 
 ## ✨ About the project
@@ -51,7 +50,7 @@ Il sito è stato progettato con particolare attenzione a:
 ## 🚀 Deployment
 Il sito è pubblicato tramite **GitHub Pages**.
 
-🔗 https://letiziaquaroni.github.io
+🔗 [Let1zia99.letiziaquaroni.github.io](https://let1zia99.github.io/letiziaquaroni.github.io/)
 
 ## 📫 Contatti
 - Email: letizia.quaroni@hotmail.it
